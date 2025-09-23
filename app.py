@@ -15,7 +15,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-col1, col2 = st.columns(3)
+col1, col2 = st.columns(2)
 
 with col1:
     S0 = st.number_input("Current Stock Price (S0)", 0.0, 1000.0, 100.0)
