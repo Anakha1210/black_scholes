@@ -40,10 +40,16 @@ heat_col1,heat_col2=st.columns(2)
 
 with heat_col1:
     spot_min=st.number_input("Min Spot Price",value=50.0)
-    spont_max=st.numer_input("Max Spot Price",value=150.0)
+    spot_max=st.number_input("Max Spot Price",value=150.0)
 with heat_col2:
     vol_min=st.number_input("Min Volitility",value=0.01)
     vol_max=st.number_input("Max Volitility",value=1.0)
+call_fig=black_scholes_heatmap(K,T,r,spot_min,spot_max,vol_min,vol_max,option="call")
+put_fig=black_scholes_heatmap(K,T,r,spot_min,spot_max,vol_min,vol_max,option="put")
 
-fig=black_scholes_heatmap(K,T,r,spot_min,spot_max,vol_min,vol_max)
-st.plotly_chart(fig,use_container_width=True)
+hm_col1,hm_col2=st.columns(2)
+
+with hm_col1:
+    st.plotly_chart(call_fig,use_container_width=True)
+with hm_col2:
+    st.plotly_chart(put_fig,use_container_width=True)

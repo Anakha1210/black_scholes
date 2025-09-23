@@ -5,7 +5,7 @@ from black_formula import black_scholes_price
 
 def black_scholes_heatmap(K,T,r,spot_min, spot_max, vol_min, vol_max, steps=10,option="call"):
     spot_range=np.linspace(spot_min,spot_max,steps)
-    vol_range=np.linespace(vol_min,vol_max,steps)
+    vol_range=np.linspace(vol_min,vol_max,steps)
     z=np.zeros((steps,steps))
     for i,S0 in enumerate(spot_range):
         for j,sigma in enumerate(vol_range):
