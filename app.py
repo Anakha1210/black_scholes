@@ -1,6 +1,6 @@
 import streamlit as st
 from black_formula import black_scholes_price
-from utilities.plots import black_scholes_heatmap
+from utils.plots import black_scholes_heatmap
 
 
 st.set_page_config(
