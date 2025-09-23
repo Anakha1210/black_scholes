@@ -10,7 +10,7 @@ def black_scholes_heatmap(K,T,r,spot_min, spot_max, vol_min, vol_max, steps=10,o
     for i,S0 in enumerate(spot_range):
         for j,sigma in enumerate(vol_range):
             call_price,put_price=black_scholes_price(S0,K,T,r,sigma)
-            z[i,j]=call_price if option_type=="call" else put_price
+            z[i,j]=call_price if option=="call" else put_price
     fig=go.Figure(data=go.Heatmap(
         z=z,
         x=spot_range,
