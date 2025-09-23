@@ -11,12 +11,16 @@ def black_scholes_heatmap(K,T,r,spot_min, spot_max, vol_min, vol_max, steps=10,o
         for j,sigma in enumerate(vol_range):
             call_price,put_price=black_scholes_price(S0,K,T,r,sigma)
             z[i,j]=call_price if option=="call" else put_price
+            text[j, i] = f"{price:.2f}"
     fig=go.Figure(data=go.Heatmap(
         z=z,
         x=spot_range,
         y=vol_range,
         colorscale='Viridis',
-        colorbar=dict(title="Call Price")
+        colorbar=dict(title="Price"),
+        text=text,             
+        texttemplate="%{text}",
+        textfont={"size":10}
     ))
     
     fig.update_layout(
