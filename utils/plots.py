@@ -22,6 +22,6 @@ def black_scholes_heatmap(K,T,r,spot_min, spot_max, vol_min, vol_max, steps=10,o
     fig.update_layout(
         xaxis_title="Spot Price",
         yaxis_title="Volatility",
-        title=f"{option_type} option Price Heatmap"
+        title=f"{option} option Price Heatmap"
     )
     return fig
