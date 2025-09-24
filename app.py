@@ -10,46 +10,41 @@ st.set_page_config(
 )
 
 st.markdown("""
-<style>
-.option-cards {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-.option-card {
-  background: linear-gradient(180deg, #ffffff 0%, #f7f9fb 100%);
-  border-radius: 12px;
-  padding: 14px;
-  box-shadow: 0 6px 18px rgba(12,34,56,0.08);
-  width: 220px;
-  text-align: left;
-  border: 1px solid #e6eef8;
-}
-.option-label {
-  font-size: 13px;
-  color: #6b7280;
-  margin-bottom: 6px;
-}
-.option-value {
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-}
-.call-accent { color: #0b875b; }   /* green */
-.put-accent  { color: #c53030; }  /* red */
-</style>
-
-<div class="option-cards">
-  <div class="option-card">
-    <div class="option-label">📈 CALL Value</div>
-    <div class="option-value call-accent">${call_price:.2f}</div>
-  </div>
-
-  <div class="option-card">
-    <div class="option-label">📉 PUT Value</div>
-    <div class="option-value put-accent">${put_price:.2f}</div>
-  </div>
-</div>
+    <style>
+    .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+    .option-card {
+        background: #181c23;
+        border-radius: 16px;
+        padding: 32px 48px;
+        margin: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        text-align: center;
+        color: #fff;
+        min-width: 280px;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .option-title {
+        font-size: 2em;
+        margin-bottom: 16px;
+        font-weight: 600;
+    }
+    .option-label {
+        font-size: 1.25em;
+        margin-bottom: 8px;
+        font-weight: 400;
+    }
+    .option-value {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #41b883;
+        margin-bottom: 12px;
+    }
+    </style>
 """, unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
