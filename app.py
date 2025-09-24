@@ -36,7 +36,7 @@ if st.button("Calculate Option Prices"):
     .option-card {
         background: #181c23;
         border-radius: 16px;
-        padding: 32px 48px;
+        padding: 8px 12px;
         margin: 16px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         text-align: center;
@@ -67,16 +67,15 @@ if st.button("Calculate Option Prices"):
 <div class="center-container">
     <div class="option-card">
         <div class="option-title">Call Option Price</div>
-        <div class="option-value">{call_price}</div>
+        <div class="option-value">{call_price:.2f}</div>
     </div>
     <div class="option-card">
         <div class="option-title">Put Option Price</div>
-        <div class="option-value">{put_price}</div>
+        <div class="option-value">{put_price:.2f}</div>
     </div>
 </div>
 """, unsafe_allow_html=True)
-    st.write(f"Call Option Price: {call_price:.2f}")
-    st.write(f"Put Option Price: {put_price:.2f}")
+    
     
 st.markdown("------------")
 
