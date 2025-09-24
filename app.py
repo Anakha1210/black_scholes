@@ -39,11 +39,11 @@ st.subheader("interacticve Heatmap Controls")
 heat_col1,heat_col2=st.columns(2)
 
 with heat_col1:
-    spot_min=st.number_input("Min Spot Price",value=50.0)
-    spot_max=st.number_input("Max Spot Price",value=150.0)
+    spot_min=st.sidebar.number_input("Min Spot Price",value=50.0)
+    spot_max=st.sidebar.number_input("Max Spot Price",value=150.0)
 with heat_col2:
-    vol_min=st.number_input("Min Volitility",value=0.01)
-    vol_max=st.number_input("Max Volitility",value=1.0)
+    vol_min=st.sidebar.number_input("Min Volitility",value=0.01)
+    vol_max=st.sidebar.number_input("Max Volitility",value=1.0)
 call_fig=black_scholes_heatmap(K,T,r,spot_min,spot_max,vol_min,vol_max,option="call")
 put_fig=black_scholes_heatmap(K,T,r,spot_min,spot_max,vol_min,vol_max,option="put")
 
@@ -61,10 +61,7 @@ st.subheader("Interacticve PNL Heatmap Controls")
 
 purchase_call = st.sidebar.number_input("Purchase Price (Call)", min_value=0.0, value=10.0, step=0.1)
 purchase_put  = st.sidebar.number_input("Purchase Price (Put)",  min_value=0.0, value=5.0,  step=0.1)
-spot_min      = st.sidebar.number_input("Min Spot Price", value=80.0, step=1.0)
-spot_max      = st.sidebar.number_input("Max Spot Price", value=120.0, step=1.0)
-vol_min       = st.sidebar.number_input("Min Volatility", value=0.1,  step=0.01)
-vol_max       = st.sidebar.number_input("Max Volatility", value=0.5,  step=0.01)
+
 
 
 st.subheader("Call Option PNL Heatmap")
