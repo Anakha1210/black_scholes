@@ -37,7 +37,7 @@ if st.button("Calculate Option Prices"):
         background: #181c23;
         border-radius: 16px;
         padding: 8px 12px;
-        margin: 16px;
+        margin: 8px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         text-align: center;
         color: #fff;
@@ -46,7 +46,7 @@ if st.button("Calculate Option Prices"):
     }
     .option-title {
         font-size: 2em;
-        margin-bottom: 16px;
+        margin-bottom: 8px;
         font-weight: 600;
     }
     .option-label {
@@ -58,7 +58,7 @@ if st.button("Calculate Option Prices"):
         font-size: 2.5em;
         font-weight: bold;
         color: #41b883;
-        margin-bottom: 12px;
+        margin-bottom: 8px;
     }
     </style>
 """, unsafe_allow_html=True)
