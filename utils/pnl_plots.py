@@ -30,8 +30,8 @@ def black_scholes_pnl_heatmap(K,T,r,spot_min,spot_max,vol_min,vol_max,purchase_p
     ))
 
     fig.update_layout(
-        x_axis_title='Spot Price',
-        y_axis_title='Volatility',
+        xaxis_title="Spot Price",
+        yaxis_title="Volatility",
         title=f'{option} Option PnL Heatmap'
     )
     return fig
