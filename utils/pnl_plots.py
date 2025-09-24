@@ -3,7 +3,9 @@ import plotly.graph_objects as go
 from black_formula import black_scholes_price
 
 def black_scholes_pnl_heatmap(K,T,r,spot_min,spot_max,vol_min,vol_max,purchase_price,steps=10,option="call"):
-    spot_range=np.linspace((steps,steps))
+    spot_range=np.linspace(spot_min,spot_max,steps)
+    vol_range=np.linspace(vol_min,vol_max,steps)
+    z=np.empty((steps,steps))
     text=np.empty((steps,steps),dtype=object)
     for i,S0 in enumerate(spot_range):
         for j,sigma in enumerate(vol_range):
