@@ -63,7 +63,7 @@ if st.button("Calculate Option Prices"):
     </style>
 """, unsafe_allow_html=True)
 
-    st.markdown("""
+    st.markdown(f"""
 <div class="center-container">
     <div class="option-card">
         <div class="option-title">Call Option Price</div>
