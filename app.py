@@ -31,31 +31,27 @@ if st.button("Calculate Option Prices"):
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 80vh;
+        margin-top: 10px;       /* Reduced top margin */
+        margin-bottom: 0px;     /* No extra bottom margin */
     }
     .option-card {
         background: #181c23;
         border-radius: 16px;
-        padding: 8px 12px;
-        margin: 8px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        padding: 24px 32px;     /* Reduced padding */
+        margin: 8px;            /* Reduced margin */
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
         text-align: center;
         color: #fff;
-        min-width: 280px;
+        min-width: 200px;
         font-family: 'Segoe UI', sans-serif;
     }
     .option-title {
-        font-size: 2em;
-        margin-bottom: 8px;
+        font-size: 1.5em;
+        margin-bottom: 10px;
         font-weight: 600;
     }
-    .option-label {
-        font-size: 1.25em;
-        margin-bottom: 8px;
-        font-weight: 400;
-    }
     .option-value {
-        font-size: 2.5em;
+        font-size: 2em;
         font-weight: bold;
         color: #41b883;
         margin-bottom: 8px;
