@@ -24,6 +24,57 @@ with col2:
 if st.button("Calculate Option Prices"):
     call_price, put_price = black_scholes_price(S0, K, T, r, sigma)
     st.markdown("### Option Prices")
+    
+    st.markdown("""
+    <style>
+    .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+    .option-card {
+        background: #181c23;
+        border-radius: 16px;
+        padding: 32px 48px;
+        margin: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        text-align: center;
+        color: #fff;
+        min-width: 280px;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .option-title {
+        font-size: 2em;
+        margin-bottom: 16px;
+        font-weight: 600;
+    }
+    .option-label {
+        font-size: 1.25em;
+        margin-bottom: 8px;
+        font-weight: 400;
+    }
+    .option-value {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #41b883;
+        margin-bottom: 12px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+    st.markdown("""
+<div class="center-container">
+    <div class="option-card">
+        <div class="option-title">Call Option Price</div>
+        <div class="option-value">{call_price}</div>
+    </div>
+    <div class="option-card">
+        <div class="option-title">Put Option Price</div>
+        <div class="option-value">{put_price}</div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
     st.write(f"Call Option Price: {call_price:.2f}")
     st.write(f"Put Option Price: {put_price:.2f}")
     
