@@ -1,7 +1,7 @@
 import streamlit as st
 from black_formula import black_scholes_price
 from utils.plots import black_scholes_heatmap
-
+from utils.pnl_plots import black_scholes_pnl_heatmap
 
 st.set_page_config(
     page_title="Black-Scholes Calculator",
@@ -53,3 +53,26 @@ with hm_col1:
     st.plotly_chart(call_fig,use_container_width=True)
 with hm_col2:
     st.plotly_chart(put_fig,use_container_width=True)
+
+st.markdown("------------")
+
+st.subheader("Interacticve PNL Heatmap Controls")
+
+
+purchase_call = st.sidebar.number_input("Purchase Price (Call)", min_value=0.0, value=10.0, step=0.1)
+purchase_put  = st.sidebar.number_input("Purchase Price (Put)",  min_value=0.0, value=5.0,  step=0.1)
+spot_min      = st.sidebar.number_input("Min Spot Price", value=80.0, step=1.0)
+spot_max      = st.sidebar.number_input("Max Spot Price", value=120.0, step=1.0)
+vol_min       = st.sidebar.number_input("Min Volatility", value=0.1,  step=0.01)
+vol_max       = st.sidebar.number_input("Max Volatility", value=0.5,  step=0.01)
+
+
+st.subheader("Call Option PNL Heatmap")
+st.plotly_chart(
+    black_scholes_pnl_heatmap(K, T, r, spot_min, spot_max, vol_min, vol_max, purchase_call, option="call")
+)
+
+st.subheader("Put Option PNL Heatmap")
+st.plotly_chart(
+    black_scholes_pnl_heatmap(K, T, r, spot_min, spot_max, vol_min, vol_max, purchase_put, option="put")
+)
