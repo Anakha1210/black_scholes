@@ -47,6 +47,19 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+<div class="center-container">
+    <div class="option-card">
+        <div class="option-title">Call Option Price</div>
+        <div class="option-value">10.45</div>
+    </div>
+    <div class="option-card">
+        <div class="option-title">Put Option Price</div>
+        <div class="option-value">5.57</div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 col1, col2 = st.columns(2)
 
 with col1:
