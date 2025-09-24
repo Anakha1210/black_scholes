@@ -23,9 +23,9 @@ with col2:
 
 if st.button("Calculate Option Prices"):
     call_price, put_price = black_scholes_price(S0, K, T, r, sigma)
-st.markdown("### Option Prices")
-st.write(f"Call Option Price: {call_price:.2f}")
-st.write(f"Put Option Price: {put_price:.2f}")
+    st.markdown("### Option Prices")
+    st.write(f"Call Option Price: {call_price:.2f}")
+    st.write(f"Put Option Price: {put_price:.2f}")
     
 st.markdown("------------")
 
