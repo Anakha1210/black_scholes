@@ -2,7 +2,7 @@ import streamlit as st
 from black_formula import black_scholes_price
 from utils.plots import black_scholes_heatmap
 from utils.pnl_plots import black_scholes_pnl_heatmap
-from utils.db_utils import save_calculation
+#from utils.db_utils import save_calculation
 
 
 st.set_page_config(
@@ -25,7 +25,7 @@ with col2:
 
 if st.button("Calculate Option Prices"):
     call_price, put_price = black_scholes_price(S0, K, T, r, sigma)
-    save_calculation(S0,K,r,sigma,T,call_price,put_price)
+    #save_calculation(S0,K,r,sigma,T,call_price,put_price)
     st.markdown("### Option Prices")
     
     st.markdown("""
