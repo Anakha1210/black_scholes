@@ -3,3 +3,4 @@ scipy
 streamlit
 plotly
 pandas
+mysql-connector-python
